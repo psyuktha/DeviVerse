@@ -31,9 +31,15 @@ def go_to_next_article():
         print("Error navigating to next article:", e)
         return False  
     return True
-
+i=0
 while True:
+    i+=1
+    if i==72:
+        i=84
+    with open("/Users/yuktha/Documents/Soundarya_Lahari/soundarya_lahari.txt", "a") as file:
+            file.write(str(i) + "\n" )
     scrape_page()
+    
     if not go_to_next_article():
         print("No more articles to scrape.")
         break
